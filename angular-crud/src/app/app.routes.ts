@@ -6,10 +6,10 @@ import { EmployeesComponent } from './employees/employees.component';
 export const routes: Routes = [
   { path: '', component: HomeComponent }, // Eager loaded component
   {
-    path: 'employees',
+    path: 'employees/add',
     loadComponent: () =>
-      import('./employees/employees.component').then(
-        (m) => m.EmployeesComponent
+      import('./employees/employee-form/employee-form.component').then(
+        (m) => m.EmployeeFormComponent
       ),
   }, // Lazy-loaded standalone component
   {

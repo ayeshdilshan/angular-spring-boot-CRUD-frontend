@@ -2,8 +2,16 @@
   <div class="header-content">
     <h1>My Angular SpringBoot CRUD Application</h1>
     <nav>
-      <a routerLink="/" routerLinkActive="active">Home</a>
-      <a routerLink="/employees" routerLinkActive="active">Employees</a>
+      <button style="background-color: aliceblue;" mat-button [matMenuTriggerFor]="menu">Employees</button>
+      
+      <!-- Dropdown Menu Items -->
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="'/employees/add'" routerLinkActive="active">Add Employee</button>
+        <button mat-menu-item [routerLink]="'/employees/list'">Employee List</button>
+        <button mat-menu-item [routerLink]="'/employees/edit'">Edit Employee</button>
+        <button mat-menu-item [routerLink]="'/employees/delete'">Delete Employee</button>
+      </mat-menu>
+      <!-- </a> -->
       <a routerLink="/departments" routerLinkActive="active">departments</a>
       <a routerLink="/about" routerLinkActive="active">About</a>
       <a routerLink="/contact" routerLinkActive="active">Contact</a>
