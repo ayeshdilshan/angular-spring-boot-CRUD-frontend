@@ -1,0 +1,25 @@
+.employee-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  mat-form-field {
+    margin-bottom: 16px;
+    width: 300px;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  button {
+    margin-left: 8px;
+  }
+
+  .form-title{
+    text-align: center;
+    padding-top: 10px;
+  }
+  

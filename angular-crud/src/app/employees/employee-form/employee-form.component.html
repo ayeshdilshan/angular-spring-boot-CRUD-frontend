@@ -1,1 +1,39 @@
-<p>employee-form works!</p>
+<h2 mat-dialog-title class="form-title">Save Employee</h2>
+<form [formGroup]="employeeForm" class="employee-form">
+  <mat-form-field appearance="outline">
+    <mat-label>Full Name</mat-label>
+    <input matInput formControlName="name" placeholder="Enter full name" />
+    <mat-error *ngIf="employeeForm.get('name')?.invalid && employeeForm.get('name')?.touched">
+      Name is required.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Position</mat-label>
+    <input matInput formControlName="position" placeholder="Enter position" />
+    <mat-error *ngIf="employeeForm.get('position')?.invalid && employeeForm.get('position')?.touched">
+      Position is required.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Department</mat-label>
+    <input matInput formControlName="department" placeholder="Enter department" />
+    <mat-error *ngIf="employeeForm.get('department')?.invalid && employeeForm.get('department')?.touched">
+      Department is required.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" placeholder="Enter email" />
+    <mat-error *ngIf="employeeForm.get('email')?.invalid && employeeForm.get('email')?.touched">
+      Please enter a valid email.
+    </mat-error>
+  </mat-form-field>
+
+  <div class="form-actions">
+    <button mat-button class="btn btn-secondary"(click)="onCancel()">Cancel</button>
+    <button mat-raised-button class="btn btn-primary" (click)="onSave()" >Save</button>
+  </div>
+</form>
